@@ -1,6 +1,27 @@
 #+TITLE: README
 #+AUTHOR: Tom Purl <tom@tompurl.com>
 
+* Setup
+This codebase makes the following assumptions:
+
+1. You are using MacOS or a Linux distribution. If you're using Windows you need to run this code from WSL.
+2. You have installed the [[https://nixos.org/][Nix Package Manager]].
+
+Run the following commands to install the dependencies:
+
+#+BEGIN_SRC shell
+nix-shell
+poetry lock
+poetry intall
+# "Drop" into a shell instance with all dependencies
+poetry shell
+#+END_SRC
+
+#+BEGIN_NOTE
+If you are familiar with the Python ecosystem you can also simply use whichever Python 3 runtime you prefer and install the =selenium= library using =pip=.
+#+END_NOTE
+
+Now you can execute the scripts below.
 * Selenoid Presentation
 ** Abstract
 #+BEGIN_QUOTE -r
