@@ -1,0 +1,57 @@
+#+TITLE: README
+#+AUTHOR: Tom Purl <tom@tompurl.com>
+
+* Selenoid Presentation
+** Abstract
+#+BEGIN_QUOTE -r
+Have you ever wanted to test something using a browser that wasn't installed on your machine Maybe the browser is installed but you need multiple versions?
+
+Automated browser tests can save a lot of time, but watching those tests run for failures can be a huge drain on your productivity. Wouldn't it be nice if you could record your test sessions in the background so you can watch a replay later?
+
+You can do all of this easily using hosted services like Browserstack, but they can be fairly expensive. Also, many such services try to lock you into proprietary testing frameworks. Wouldn't it be nice to find an open source alternative that was easy to setup?
+
+Selenoid is the tool that can do all of this. It's a free server that implements the Selenium Grid API plus a lot more. And because it uses Docker you can set it up on practically any machine in less than 10 minutes.
+
+My presentation will consist of a live demo where I will
+
+1. Install and configure Selenoid
+2. Run some manual tests using the VNC-based web interface
+3. Run some automated tests and view the recorded sessions
+4. Time permitting I will also discuss the advantages of Selenoid over Selenium Grid.
+#+END_QUOTE
+** Outline
+*** Install and configure Selenoid
+**** Download binary
+**** Discuss prerequisites
+**** Start selenoid with a new config
+**** Start selenoid-ui
+**** Visit web interface
+*** Run some manual tests using the VNC-based web interface
+**** Launch latest Chrome
+**** Perform a search using Wikipedia
+*** Run some automated tests and view the recorded sessions
+**** Step through =simple-test.py=
+- Make sure pepole know that it doesn't use best practices
+**** Run =simple-test.py=
+- Show the VNC web interaface
+- Show the recorded video
+**** Run =multi.sh=
+- Show how Selenoid and Selenium Grid (SG) can simultaneously handle multiple requests, browsers, and versions
+**** Run =multimulti.sh=
+- Show how Selenoid and SG can queue up requests
+*** Time permitting I will also discuss the advantages of Selenoid over Selenium Grid.
+**** Advantages of Selenium Grid
+- Free and FOSS
+- Works in Kubernetes very easily (again, for free)
+  + Moon works on Kubernetes, but it's not FOSS
+- HUGE community
+**** Advantages of Selenoid
+- UI
+- Web VNC
+- Simpler Setup on a desktop
+- Very simple video recordings
+- Web video organizer and viewer
+**** What's Missing?
+- Mobile testing
+  + It's possible with both frameworks but requires extra lifting
+- Comparisons with hosted providers
