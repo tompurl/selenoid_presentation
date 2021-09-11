@@ -2,6 +2,7 @@
 #+AUTHOR: Tom Purl <tom@tompurl.com>
 
 * Setup
+** Client
 This codebase makes the following assumptions:
 
 1. You are using MacOS or a Linux distribution. If you're using Windows you need to run this code from WSL.
@@ -15,13 +16,28 @@ poetry lock
 poetry intall
 # "Drop" into a shell instance with all dependencies
 poetry shell
+# Running this command without arguments will show you a usage statement
+./simple-test.py
 #+END_SRC
 
-#+BEGIN_NOTE
+#+BEGIN_EXAMPLE
 If you are familiar with the Python ecosystem you can also simply use whichever Python 3 runtime you prefer and install the =selenium= library using =pip=.
-#+END_NOTE
+#+END_EXAMPLE
 
 Now you can execute the scripts below.
+** Server (which can be the same ast the Client)
+*** Selenoid (Simplest by far, default)
+1. Make sure you have Docker installed
+2. Follow [[https://aerokube.com/selenoid/latest/#_start_selenoid][these instructions to install and start Selenoid]]
+3. Also start =selenoid-ui=
+4. Visit [[http://your-server-or-computer-ip:8080]]
+*** Selenium Grid (For comparison)
+1. Install Docker and =docker-compose=
+2. Run =sudo docker-compose up= in this directory from the command line
+3. Visit the *management ui* here:
+   a. [[http://your-server-or-computer-ip:4444]]
+4. If you want to interact with the MicrosoftEdge instance visit this url:
+   a. http://your-server-or-computer-ip:7900
 * Selenoid Presentation
 ** Abstract
 #+BEGIN_QUOTE -r
@@ -56,6 +72,10 @@ My presentation will consist of a live demo where I will
 **** Run =simple-test.py=
 - Show the VNC web interaface
 - Show the recorded video
+- Mention:
+  + This setup it *much, much easier* than the default way requiring a local web driver exe
+  + You don't need to worry about "avoiding the test browser window". Everything's in the background
+  + You can *do other things* while the test is running and then watch the video only if the test fails at your convenience
 **** Run =multi.sh=
 - Show how Selenoid and Selenium Grid (SG) can simultaneously handle multiple requests, browsers, and versions
 **** Run =multimulti.sh=
