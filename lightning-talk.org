@@ -1,0 +1,36 @@
+#+TITLE: Cheap and Easy Cross-Browser Testing with Selenoid
+#+Subtitle: ⚡Lightning Talk⚡
+#+REVEAL_TITLE_SLIDE: <h2>%t</h2><h3>%s</h3><h4>%a</h4>
+#+author: Tom Purl
+#+OPTIONS: toc:nil H:4 ^:nil pri:t num:nil
+#+REVEAL_THEME: serif
+
+* Has this Ever Happened to You?
+[[https://static.tompurl.com/images/infomercial.gif]]
+* Unit Testing Your App is Not Enough
+- Doesn't test...
+  - Full scenarios (i.e. acceptance or end-to-end testing)
+  - User experience (perf and UI)
+* But What's the Worst That Could Happen?
+- Lots after a browser upgrade!
+  - Perf can change dramatically
+  - Look and feel can change
+* Example: Significant Perf Change Related to SVG Rendering
+- https://support.google.com/chrome/thread/118284571/any-one-suffers-from-the-newest-ver-92-rendering-some-heavy-svg-jobs?hl=en
+* So What are Some UI Testing Best Practices?
+- Multiple versions of the same browser
+- Multiple browsers (e.g. Chrome, Safari, and Edge)
+- Testing a core set of functionality regularly, measuring performance and UI changes
+- Automated testing with video recording
+* SAAS to the Rescue! (Right?)
+- **Examples**: BrowserStack, LambdaTest
+- **Advantages**: Easy to use and setup, always up-to-date, feature-packed
+- **Disadvantages**: Expensive and sometimes requires monthly subscriptions
+* Or Just Use Selenoid
+- Ideal for small shops
+- Free and open source
+- Very easy setup
+- LOTS of features
+- Easier than Selenium Grid ;-)
+* Full Presentation
+- https://github.com/tompurl/selenoid_presentation/blob/master/README.org

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Cheap and Easy Cross-Browser Testing with Selenoid</title>
+<meta name="author" content="Tom Purl"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="/home/tom/.emacs.d/.local/straight/build-28.0.90/revealjs/dist/reveal.css"/>
+
+<link rel="stylesheet" href="/home/tom/.emacs.d/.local/straight/build-28.0.90/revealjs/dist/theme/serif.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h2>Cheap and Easy Cross-Browser Testing with Selenoid</h2><h3>⚡Lightning Talk⚡</h3><h4>Tom Purl</h4>
+</section>
+
+<section>
+<section id="slide-org16fd1a0">
+<h2 id="org16fd1a0">Has this Ever Happened to You?</h2>
+
+<div id="org40bb9d9" class="figure">
+<p><img src="https://static.tompurl.com/images/infomercial.gif" alt="infomercial.gif" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org1df9cad">
+<h2 id="org1df9cad">Unit Testing Your App is Not Enough</h2>
+<ul>
+<li>Doesn&rsquo;t test&#x2026;
+<ul>
+<li>Full scenarios (i.e. acceptance or end-to-end testing)</li>
+<li>User experience (perf and UI)</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3a8cac3">
+<h2 id="org3a8cac3">But What&rsquo;s the Worst That Could Happen?</h2>
+<ul>
+<li>Lots after a browser upgrade!
+<ul>
+<li>Perf can change dramatically</li>
+<li>Look and feel can change</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org11bec74">
+<h2 id="org11bec74">Example: Significant Perf Change Related to SVG Rendering</h2>
+<ul>
+<li><a href="https://support.google.com/chrome/thread/118284571/any-one-suffers-from-the-newest-ver-92-rendering-some-heavy-svg-jobs?hl=en">https://support.google.com/chrome/thread/118284571/any-one-suffers-from-the-newest-ver-92-rendering-some-heavy-svg-jobs?hl=en</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3e15db6">
+<h2 id="org3e15db6">So What are Some UI Testing Best Practices?</h2>
+<ul>
+<li>Multiple versions of the same browser</li>
+<li>Multiple browsers (e.g. Chrome, Safari, and Edge)</li>
+<li>Testing a core set of functionality regularly, measuring performance and UI changes</li>
+<li>Automated testing with video recording</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgc6fee96">
+<h2 id="orgc6fee96">SAAS to the Rescue! (Right?)</h2>
+<ul>
+<li><b><b>Examples</b></b>: BrowserStack, LambdaTest</li>
+<li><b><b>Advantages</b></b>: Easy to use and setup, always up-to-date, feature-packed</li>
+<li><b><b>Disadvantages</b></b>: Expensive and sometimes requires monthly subscriptions</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgef70a34">
+<h2 id="orgef70a34">Or Just Use Selenoid</h2>
+<ul>
+<li>Ideal for small shops</li>
+<li>Free and open source</li>
+<li>Very easy setup</li>
+<li>LOTS of features</li>
+<li>Easier than Selenium Grid ;-)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgec468b3">
+<h2 id="orgec468b3">Full Presentation</h2>
+<ul>
+<li><a href="https://github.com/tompurl/selenoid_presentation/blob/master/README.org">https://github.com/tompurl/selenoid_presentation/blob/master/README.org</a></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.90/revealjs/dist/reveal.js"></script>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.90/revealjs/plugin/markdown/markdown.js"></script>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.90/revealjs/plugin/notes/notes.js"></script>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.90/revealjs/plugin/search/search.js"></script>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.90/revealjs/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
