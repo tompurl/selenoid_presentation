@@ -19,7 +19,7 @@ Usage: simple-test.py sleep-time chrome|firefox|MicrosoftEdge version-number hub
     print(msg)
 
 def browser_log(msg, browser, version_number):
-        print(f"{os.getpid()}::{browser}:{version_number} - {msg}")
+    print(f"{os.getpid()}::{browser}:{version_number} - {msg}")
 
 ### Process args
 if len(sys.argv) != 5:
@@ -55,7 +55,7 @@ driver.get("https://en.wikipedia.org/wiki/Main_Page")
 time.sleep(sleep_time)
 
 browser_log("Make sure the title bar sez Wikipedia", browser, version_number)
-assert("Wikipedia" in driver.title)
+assert "Wikipedia" in driver.title
 
 browser_log("Type in a search term", browser, version_number)
 elem = driver.find_element_by_name("search")
@@ -69,7 +69,7 @@ browser_log("Give you time to catch up", browser, version_number)
 time.sleep(sleep_time)
 
 browser_log("Assert the title of the resulting page", browser, version_number)
-assert("The IT Crowd - Wikipedia" in driver.title)
+assert "The IT Crowd - Wikipedia" in driver.title
 
 browser_log("Cleanup", browser, version_number)
 driver.quit()

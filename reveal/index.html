@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>An Intro to Selenoid</title>
+<meta name="author" content="Tom Purl"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="/home/tom/.emacs.d/.local/straight/build-28.0.91/revealjs/dist/reveal.css"/>
+
+<link rel="stylesheet" href="/home/tom/.emacs.d/.local/straight/build-28.0.91/revealjs/dist/theme/beige.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h2>An Intro to Selenoid</h2><h3>✅ Small Shop UI Testing Made Easy ✅</h3><h4>Tom Purl</h4>
+</section>
+
+<section>
+<section id="slide-org94b37b1">
+<h2 id="org94b37b1">Who am I?</h2>
+
+<div id="org50a072a" class="figure">
+<p><img src="https://secure.meetupstatic.com/photos/member/a/5/a/1/highres_308802401.jpeg" alt="highres_308802401.jpeg" />
+</p>
+</div>
+<ul>
+<li>I&rsquo;m Tom!</li>
+<li>Currently a DevOps Engineer</li>
+<li>Spent 2 years building UI testing systems and writing tests for those systems</li>
+<li>Enjoy building, sharing and learning</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orga085a37">
+<h2 id="orga085a37">An Aside: BDD &amp; Acceptance Testing</h2>
+<p>
+🍰
+</p>
+<aside class="notes">
+<ul>
+<li>Before we start talking about how cool Selenoid or Selenium are it helps to demystify a few things.</li>
+<li>This topic is usually seen as an adversarial one by some developers, like unneeded busywork. And that&rsquo;s very understandable and ok.</li>
+<li>I am not very good at persuading people through arguments. I&rsquo;m better showing people what has helped me.</li>
+<li>As a caveat, I&rsquo;ve also written quite a bit of non-test code in my career so hopefully my perspective can be seen as balanced</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org73d3a62" data-background="./img/finish-line-collapse.gif">
+<h3 id="org73d3a62">We are in the Business of Delivering Working Features</h3>
+<aside class="notes">
+<ul>
+<li>Refresher on the importance of acceptance testing</li>
+<li>It&rsquo;s no fun to fail at the finish line</li>
+<li>To put it simply, BDD and acceptance testing are about delivering working features using a simple process that starts from the beginning.</li>
+
+</ul>
+
+</aside>
+<div class="slide-footer">Source: https://giphy.com/gifs/europeanathletics-9Y1BfGEG29BVrNZyBX</div>
+</section>
+<section id="slide-org69f2722">
+<h3 id="org69f2722">Acceptance Testing Codifies Interface Specs</h3>
+
+<div id="orgda05c32" class="figure">
+<p><img src="./img/space-shuttle-dashboard.jpg" alt="space-shuttle-dashboard.jpg" />
+</p>
+</div>
+<div class="slide-footer">https://www.reddit.com/r/interestingasfuck/comments/9270o3/the_dashboard_of_a_space_shuttle/</div>
+</section>
+<section id="slide-orgea5394c">
+<h3 id="orgea5394c">Interface Specs</h3>
+<ul>
+<li>What behavior did you promise?</li>
+<li>How can you check your (or someone else&rsquo;s) work?</li>
+
+</ul>
+<aside class="notes">
+<ul>
+<li>You (or someone else) needs to be able to reasonably determine that what you&rsquo;re delivering is what <b>you promised to your customer</b></li>
+<li>Somewhere, something needs to be written down that says &ldquo;this is the behavior that my customer expects from this feature that is being delivered&rdquo;</li>
+<li>E.g. Word doc, markdown doc, JIRA, executablet code</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org4f8386b">
+<h3 id="org4f8386b">That <i>Something</i> Is an Acceptance Test</h3>
+<p>
+A scenario that ties delivered code to a customer&rsquo;s expectations of behavior
+</p>
+<aside class="notes">
+<ul>
+<li>That spec <b>doesn&rsquo;t</b> have to be automated, but depending on the <i>value</i> of that feature and the frequency of your releases you may want to do so</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org9b931f3">
+<h3 id="org9b931f3">Unit Tests and Acceptance Tests are Both Necessary</h3>
+<ul>
+<li><b>Functionality</b> ≠ <b>Behavior</b></li>
+<li>Customers care about <b>performing actions</b></li>
+
+</ul>
+<aside class="notes">
+<ul>
+<li>Unit testing is wonderful and necessary but it tests <b>functionality</b>, not <b>behavior</b></li>
+<li>Your customers assume that your code <b>work</b>. What they care about is whether it allows them to <b>perform certain actions</b>.</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org77e610d">
+<h3 id="org77e610d">So How Do I Start Acceptance Testing?</h3>
+<ul>
+<li>BIG topic</li>
+<li>(Can be) VERY boring</li>
+
+</ul>
+
+
+<div id="org50da2d2" class="figure">
+<p><img src="./img/shaun-stare.jpg" alt="shaun-stare.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-orgb7b14c0">
+<h3 id="orgb7b14c0">Here&rsquo;s a Quick Example!</h3>
+<aside class="notes">
+<ul>
+<li>Go over running unit and acceptance tests in jgmtfr</li>
+<li>One tests low-level <b>functionality</b>, one tests <b>the interface to the customer</b></li>
+<li>Unit tests are painted lines on the road, acceptance tests are guardrails</li>
+<li>&ldquo;Outside-in testing&rdquo;</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org87c6eac">
+<h3 id="org87c6eac">Acceptance Testing Resources</h3>
+<ul>
+<li>📚 <a href="https://www.obeythetestinggoat.com/pages/book.html">Test-Driven Web Development with Python</a></li>
+<li><a href="https://gojko.net/books/bridging-the-communication-gap/">📚 Bridging the Communication Gap</a></li>
+<li><a href="https://gojko.net/books/specification-by-example/">📚 Specification by Example</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org9dd453e">
+<h2 id="org9dd453e">&#x2026;back to Selenoid</h2>
+<div class="outline-text-2" id="text-org9dd453e">
+</div>
+</section>
+<section id="slide-orgd5d4a9f">
+<h3 id="orgd5d4a9f">Imagine the Following Scenario</h3>
+<ol>
+<li>A handful of acceptance tests have been identified and automated using Selenium</li>
+<li>A few new automated acceptance tests has been written</li>
+<li>Work on desktop and mobile resolutions</li>
+<li>What else do you need?</li>
+
+</ol>
+
+
+<div id="orga2a9d69" class="figure">
+<p><img src="./img/selenium-icon.png" alt="selenium-icon.png" width="300px" />
+</p>
+</div>
+</section>
+<section id="slide-org02d4fad">
+<h3 id="org02d4fad">Q&amp;A Time - What are Your Fears When Updating Your Apps?</h3>
+</section>
+<section id="slide-orgbd166a8">
+<h3 id="orgbd166a8">Some Common UI Concerns</h3>
+</section>
+<section id="slide-orga966837">
+<h3 id="orga966837">Multiple Browsers 💛</h3>
+<aside class="notes">
+<ul>
+<li>What are you customers using again?</li>
+<li>Not terribly important since most browsers are based on Chromium anyways</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org474afa1">
+<h3 id="org474afa1">Multiple Browser Versions 💚</h3>
+<ul>
+<li>Changes between versions can greatly affect:
+<ul>
+<li>Speed</li>
+<li>Layout</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org0afd264" data-background="./img/svg-slow-loading.png" data-background-size="900px">
+<h3 id="org0afd264">Example: Significant Perf Change Related to SVG Rendering</h3>
+<aside class="notes">
+<ul>
+<li>Being able to test on beta versions of Chrome can be fairly valuable</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org6982a89">
+<h3 id="org6982a89">Recording Browser Sessions 💚</h3>
+<ul>
+<li>Some UI tests can take more than 1 or 2 minutes</li>
+<li>You can&rsquo;t afford to watch long tests</li>
+<li>Kick it off, walk away, watch it if it fails</li>
+
+</ul>
+<aside class="notes">
+<ul>
+<li>Long tests (&gt; 30 seconds) are not a best practice</li>
+<li>The long wait time will especially kill you when developing tests.</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org4372cc6">
+<h3 id="org4372cc6">SAAS To The Rescue?</h3>
+<ul>
+<li><b>Options</b>: Browserstack and LabmdaTest</li>
+<li>Cheap and easy!</li>
+<li>&#x2026;but fairly expensive</li>
+
+</ul>
+<aside class="notes">
+<ul>
+<li>This is exactly why small shops don&rsquo;t write automated acceptance tests</li>
+<li>This seems to be the sort of thing for big companies with dedicated testing departments and giant budgets</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgab08c0c">
+<h3 id="orgab08c0c">Or Just Use Selenoid</h3>
+<ul>
+<li>Free and Open Source</li>
+<li>Very easy and quick setup</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org8062037">
+<h2 id="org8062037">Demo</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgbe9000f">
+<h2 id="orgbe9000f">Thank You!</h2>
+<p>
+🌻<img src="./img/preso-qr-code.png" alt="preso-qr-code.png" />🌻
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.91/revealjs/dist/reveal.js"></script>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.91/revealjs/plugin/markdown/markdown.js"></script>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.91/revealjs/plugin/notes/notes.js"></script>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.91/revealjs/plugin/search/search.js"></script>
+<script src="/home/tom/.emacs.d/.local/straight/build-28.0.91/revealjs/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

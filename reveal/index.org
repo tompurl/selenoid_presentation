@@ -1,0 +1,123 @@
+#+TITLE: An Intro to Selenoid
+#+Subtitle: ✅ Small Shop UI Testing Made Easy ✅
+#+REVEAL_TITLE_SLIDE: <h2>%t</h2><h3>%s</h3><h4>%a</h4>
+#+author: Tom Purl
+#+OPTIONS: toc:nil H:4 ^:nil pri:t num:nil
+#+REVEAL_THEME: beige
+
+* Who am I?
+[[https://secure.meetupstatic.com/photos/member/a/5/a/1/highres_308802401.jpeg]]
+- I'm Tom!
+- Currently a DevOps Engineer
+- Spent 2 years building UI testing systems and writing tests for those systems
+- Enjoy building, sharing and learning
+* An Aside: BDD & Acceptance Testing
+🍰
+#+BEGIN_NOTES
+- Before we start talking about how cool Selenoid or Selenium are it helps to demystify a few things.
+- This topic is usually seen as an adversarial one by some developers, like unneeded busywork. And that's very understandable and ok.
+- I am not very good at persuading people through arguments. I'm better showing people what has helped me.
+- As a caveat, I've also written quite a bit of non-test code in my career so hopefully my perspective can be seen as balanced
+#+END_NOTES
+** We are in the Business of Delivering Working Features
+:PROPERTIES:
+:reveal_background: ./img/finish-line-collapse.gif
+:reveal_slide_footer: Source: https://giphy.com/gifs/europeanathletics-9Y1BfGEG29BVrNZyBX
+:END:
+#+BEGIN_NOTES
+- Refresher on the importance of acceptance testing
+- It's no fun to fail at the finish line
+- To put it simply, BDD and acceptance testing are about delivering working features using a simple process that starts from the beginning.
+#+END_NOTES
+** Acceptance Testing Codifies Interface Specs
+:PROPERTIES:
+:reveal_slide_footer: https://www.reddit.com/r/interestingasfuck/comments/9270o3/the_dashboard_of_a_space_shuttle/
+:END:
+[[./img/space-shuttle-dashboard.jpg]]
+** Interface Specs
+- What behavior did you promise?
+- How can you check your (or someone else's) work?
+#+BEGIN_NOTES
+- You (or someone else) needs to be able to reasonably determine that what you're delivering is what *you promised to your customer*
+- Somewhere, something needs to be written down that says "this is the behavior that my customer expects from this feature that is being delivered"
+- E.g. Word doc, markdown doc, JIRA, executablet code
+#+END_NOTES
+** That /Something/ Is an Acceptance Test
+A scenario that ties delivered code to a customer's expectations of behavior
+#+BEGIN_NOTES
+- That spec *doesn't* have to be automated, but depending on the /value/ of that feature and the frequency of your releases you may want to do so
+#+END_NOTES
+** Unit Tests and Acceptance Tests are Both Necessary
+- *Functionality* ≠ *Behavior*
+- Customers care about *performing actions*
+#+BEGIN_NOTES
+- Unit testing is wonderful and necessary but it tests *functionality*, not *behavior*
+- Your customers assume that your code *work*. What they care about is whether it allows them to *perform certain actions*.
+#+END_NOTES
+** So How Do I Start Acceptance Testing?
+- BIG topic
+- (Can be) VERY boring
+
+[[./img/shaun-stare.jpg]]
+** Here's a Quick Example!
+#+BEGIN_NOTES
+- Go over running unit and acceptance tests in jgmtfr
+- One tests low-level *functionality*, one tests *the interface to the customer*
+- Unit tests are painted lines on the road, acceptance tests are guardrails
+- "Outside-in testing"
+#+END_NOTES
+** Acceptance Testing Resources
+- 📚 [[https://www.obeythetestinggoat.com/pages/book.html][Test-Driven Web Development with Python]]
+- [[https://gojko.net/books/bridging-the-communication-gap/][📚 Bridging the Communication Gap]]
+- [[https://gojko.net/books/specification-by-example/][📚 Specification by Example]]
+* ...back to Selenoid
+** Imagine the Following Scenario
+1. A handful of acceptance tests have been identified and automated using Selenium
+2. A few new automated acceptance tests has been written
+3. Work on desktop and mobile resolutions
+4. What else do you need?
+
+#+attr_html: :width 300px
+#+attr_latex: :width 300px
+[[./img/selenium-icon.png]]
+** Q&A Time - What are Your Fears When Updating Your Apps?
+** Some Common UI Concerns
+** Multiple Browsers 💛
+#+BEGIN_NOTES
+- What are you customers using again?
+- Not terribly important since most browsers are based on Chromium anyways
+#+END_NOTES
+** Multiple Browser Versions 💚
+- Changes between versions can greatly affect:
+  - Speed
+  - Layout
+** Example: Significant Perf Change Related to SVG Rendering
+:PROPERTIES:
+:reveal_background: ./img/svg-slow-loading.png
+:reveal_background_size: 900px
+:END:
+#+BEGIN_NOTES
+- Being able to test on beta versions of Chrome can be fairly valuable
+#+END_NOTEs
+** Recording Browser Sessions 💚
+- Some UI tests can take more than 1 or 2 minutes
+- You can't afford to watch long tests
+- Kick it off, walk away, watch it if it fails
+#+BEGIN_NOTES
+- Long tests (> 30 seconds) are not a best practice
+- The long wait time will especially kill you when developing tests.
+#+END_NOTES
+** SAAS To The Rescue?
+- *Options*: Browserstack and LabmdaTest
+- Cheap and easy!
+- ...but fairly expensive
+#+BEGIN_NOTES
+- This is exactly why small shops don't write automated acceptance tests
+- This seems to be the sort of thing for big companies with dedicated testing departments and giant budgets
+#+END_NOTES
+** Or Just Use Selenoid
+- Free and Open Source
+- Very easy and quick setup
+* Demo
+* Thank You!
+🌻[[./img/preso-qr-code.png]]🌻

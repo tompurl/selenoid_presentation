@@ -32,7 +32,7 @@ Now you can execute the scripts below.
 3. Also start =selenoid-ui=
 4. Visit [[http://your-server-or-computer-ip:8080]]
 *** Selenium Grid (For comparison)
-1. Install Docker and =docker-compose=
+1. Install Podman and =podman-compose=
 2. Run =sudo docker-compose up= in this directory from the command line
 3. Visit the *management ui* here:
    a. [[http://your-server-or-computer-ip:4444]]

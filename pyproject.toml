@@ -7,8 +7,13 @@ authors = ["Tom Purl <tom@tompurl.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 selenium = "^3.141.0"
+podman-compose = "^1.0.3"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+pylint = "^2.12.2"
+pyright = "^0.0.13"
+mypy = "^0.931"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
